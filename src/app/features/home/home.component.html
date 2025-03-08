@@ -1,0 +1,43 @@
+<figure
+  class="absolute left-0 w-full h-96 overflow-hidden -mt-3 opacity-50 z-10"
+>
+  <img
+    src="/code-wallpaper-preview.png"
+    alt=""
+    class="relative w-full h-full object-cover filterBlur figureGradient"
+  />
+</figure>
+
+<section class="page w-full relative z-20 overflow-hidden" id="home">
+  <div class="container" data-aos="fade-up" data-aos-duration="300">
+    <div class="mb-20">
+      <h1 class="text-5xl text-white font-light">
+        {{ "home_panel.welcome" | translate }}
+        <strong class="font-bold">ToolsCenter</strong>
+      </h1>
+    </div>
+
+    <div
+      class="w-full grid grid-cols-4 justify-start items-start flex-wrap gap-4"
+    >
+      @for (nav of navbarPages; track $index) {
+      <a
+        class="size-full flex flex-col justify-center items-center gap-4 rounded-xl p-8 bg-card-opacity shadow-card-opacity backdrop-filter border border-solid border-border-opacity transition-all"
+        [routerLink]="nav.link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{
+          exact: true
+        }"
+      >
+        <i
+          class="text-3xl text-white font-medium text-center"
+          [icon]="nav.icon"
+        ></i>
+        <h2 class="text-base text-white font-medium text-center">
+          {{ nav.label | translate }}
+        </h2>
+      </a>
+      }
+    </div>
+  </div>
+</section>

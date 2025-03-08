@@ -1,0 +1,96 @@
+{
+  "global": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delet",
+    "edit": "Edit",
+    "copy": "Copy",
+    "paste": "Paste",
+    "add": "Add",
+    "remove": "Remove",
+    "search": "Search",
+    "confirm": "Confirm",
+    "clear": "Clear",
+    "download": "Download",
+    "text_entry": "Text entry",
+    "text_output": "Text output",
+    "activated": "Activated",
+    "disabled": "Disabled"
+  },
+  "navbar": {
+    "home_panel": "Start Panel",
+    "text_convert": "Text Convert",
+    "qrcode_generator": "QR Code Generator",
+    "base_to_image": "Base64 Image",
+    "json_to_typescript": "JSON to Typescript",
+    "hash_generator": "Hash Generator",
+    "image_converter": "Image Converter",
+    "diff_checker": "Diff Checker",
+    "color_picker": "Color Picker",
+    "settings": "Settings"
+  },
+  "home_panel": {
+    "welcome": "Welcome to "
+  },
+  "text_convert": {
+    "title_page": "Text Convert",
+    "conversion": "Conversion",
+    "camel_case": "Camel case",
+    "lower_case": "lower case",
+    "upper_case": "UPPER CASE",
+    "pascal_case": "Pascal Case",
+    "kebab_case": "kebab-case",
+    "reverse": "reverse",
+    "clear": "Clear"
+  },
+  "qrcode_generator":{
+    "title_page": "QR Code Generator",
+    "text": "Text",
+    "size": "Size",
+    "border": "Border",
+    "qr_code_color": "QR Code Color",
+    "background_color": "Background color"
+  },
+  "base_to_image":{
+    "title_page": "Base64 Image",
+    "format": "Format",
+    "text": "Text",
+    "drag_drop_to_upload_file": "Drag & Drop to Upload File"
+  },
+  "json_to_typescript":{
+    "title_page": "JSON to Typescript",
+    "create_monotype": "Create monotype",
+    "sort_json_properties_alphabetically": "Sort JSON properties alphabetically",
+    "reverse_generation_order": "Reverse generation order",
+    "options": "Options"
+  },
+  "hash_generator":{
+    "title_page": "Hash Generator",
+    "text": "Text"
+  },
+  "image_converter":{
+    "title_page": "Image Converter"
+  },
+  "diff_checker":{
+    "title_page": "Diff Checker",
+    "original_text": "Original text",
+    "compared_text": "Compared text",
+    "comparison_result": "Comparison result",
+    "common": "Common",
+    "new": "New",
+    "removed": "Removed"
+  },
+  "color_picker": {
+    "title_page": "Color Picker"
+  },
+  "settings": {
+    "title_page": "Settings",
+    "appearance": "Appearance",
+    "theme": "Theme",
+    "dark":"Dark",
+    "light":"Light",
+    "language": "Language",
+    "about": "About",
+    "version": "Version"
+  }
+}

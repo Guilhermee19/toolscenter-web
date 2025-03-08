@@ -1,0 +1,96 @@
+{
+  "global": {
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "copy": "Copiar",
+    "paste": "Colar",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "search": "Pesquisar",
+    "confirm": "Confirmar",
+    "clear": "Limpar",
+    "download": "Baixar",
+    "text_entry": "Entrada",
+    "text_output": "Saída",
+    "activated": "Ativado",
+    "disabled": "Desativado"
+  },
+  "navbar": {
+    "home_panel": "Painel Inicial",
+    "text_convert": "Conversão de texto",
+    "qrcode_generator": "Gerador de código QR",
+    "base_to_image": "Imagem Base64",
+    "json_to_typescript": "JSON para Typescript",
+    "hash_generator": "Gerador de Hash",
+    "image_converter": "Conversor de imagens",
+    "diff_checker": "Verificador de Diferenças",
+    "color_picker": "Seleção de cores",
+    "settings": "Configurações"
+  },
+  "home_panel": {
+    "welcome": "Bem vindo ao "
+  },
+  "text_convert": {
+    "title_page": "Conversão de texto",
+    "conversion": "Conversão",
+    "lower_case": "minúscula",
+    "camel_case": "Primeira palavra",
+    "upper_case": "MAIÚSCULO",
+    "pascal_case": "Primeira Letra",
+    "kebab_case": "palavra-separada",
+    "reverse": "inverter",
+    "clear": "Limpar"
+  },
+  "qrcode_generator":{
+    "title_page": "Gerador de código QR",
+    "text": "Texto",
+    "size": "Tamanho",
+    "border": "Borda",
+    "qr_code_color": "Cor do QR Code",
+    "background_color": "Cor de Fundo"
+  },
+  "base_to_image":{
+    "title_page": "Imagem Base64",
+    "format": "Formato",
+    "text": "Texto",
+    "drag_drop_to_upload_file": "Arraste e solte para fazer upload do arquivo"
+  },
+  "json_to_typescript":{
+    "title_page": "JSON para Typescript",
+    "create_monotype": "Criar monótipo",
+    "sort_json_properties_alphabetically": "Ordenar Propriedades do JSON em ordem alfabética",
+    "reverse_generation_order": "Inverter ordem de geração",
+    "options": "Opções"
+  },
+  "hash_generator":{
+    "title_page": "Gerador de Hash",
+    "text": "Texto"
+  },
+  "image_converter":{
+    "title_page": "Conversor de imagens"
+  },
+  "diff_checker":{
+    "title_page": "Verificador de Diferenças",
+    "original_text": "Texto original",
+    "compared_text": "Texto comparado",
+    "comparison_result": "Resultado da comparação",
+    "common": "Comum",
+    "new": "Novo",
+    "removed": "Removido"
+  },
+  "color_picker": {
+    "title_page": "Seleção de cores"
+  },
+  "settings": {
+    "title_page": "Configurações",
+    "appearance": "Aparência",
+    "theme": "Tema",
+    "dark":"Escuro",
+    "light":"Claro",
+    "language": "Idioma",
+    "about": "Sobre",
+    "version": "Versão"
+  }
+}

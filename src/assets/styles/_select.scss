@@ -1,0 +1,103 @@
+html.dark {
+  body {
+    .mat-mdc-select {
+      .mat-mdc-select-trigger {
+        .mat-mdc-select-arrow-wrapper {
+          background-image: url(/angle-down-light.svg) !important;
+        }
+      }
+    }
+  }
+}
+
+.mat-mdc-select {
+  width: max-content !important;
+  background-color: var(--select-bg);
+  padding: 5px 10px;
+  border-radius: var(--br);
+  border: 1px solid var(--select-border);
+
+  .mat-mdc-select-trigger {
+    width: max-content;
+
+    .mat-mdc-select-value {
+      width: max-content;
+      font-size: 14px;
+      color: var(--white);
+      padding-right: 5px;
+    }
+
+    .mat-mdc-select-arrow-wrapper {
+      --mat-select-enabled-arrow-color: transparent;
+      --mat-select-focused-arrow-color: transparent;
+
+      background-image: url(/angle-down-dark.svg);
+      // background-image: url(/angle-down-light.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 14px;
+      height: 14px;
+      margin-left: 2px;
+
+      .mat-mdc-select-arrow {
+        width: 14px;
+        height: 14px;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.custom-select-panel {
+  direction: rtl !important; /* Direção do texto da direita para a esquerda */
+}
+
+.cdk-overlay-pane {
+  --mat-select-panel-background-color: var(--select-options-bg);
+  padding: 2px;
+  border-radius: var(--br);
+
+  .mat-mdc-select-panel {
+    min-width: max-content;
+    padding: 0;
+    // min-width: 175px !important;
+    min-width: max-content !important;
+    // margin-left: -40px;
+
+    .mat-mdc-option {
+      --mat-option-selected-state-layer-color: var(--select-active);
+      --mat-option-hover-state-layer-color: var(--select-active);
+      --mat-option-selected-state-label-text-color: var(--white);
+      position: relative;
+      padding: 5px 10px;
+      min-height: max-content;
+      margin: 4px;
+      border-radius: var(--br);
+      font-size: 14px;
+
+      &.mdc-list-item--selected {
+        &::after {
+          position: absolute;
+          content: "";
+          left: 0;
+          bottom: 9px;
+          width: 3px;
+          height: 16px;
+          border-radius: 100px;
+          background-color: var(--main-color);
+        }
+      }
+
+      .mdc-list-item__primary-text {
+        margin: 0;
+        color: var(--white);
+        margin-right: auto;
+      }
+
+      .mat-pseudo-checkbox {
+        display: none;
+      }
+    }
+  }
+}

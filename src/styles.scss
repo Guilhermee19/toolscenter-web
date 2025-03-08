@@ -1,1 +1,138 @@
+// Custom Theming for Angular Material
+@use "@angular/material" as mat;
+@use "assets/styles/theming" as theming;
+
+@include mat.core();
+
+// $my-primary: mat.define-palette(theming.$theme-win-dark, 500);
+// $my-accent: mat.define-palette(theming.$theme-win-dark, 200, 100, 400);
+// $my-warn: mat.define-palette(mat.$red-palette);
+
+// $my-primary-light: mat.define-palette(theming.$theme-win-light, 500);
+
+// $my-theme-dark: mat.define-light-theme(
+//   (
+//     color: (
+//       primary: $my-primary,
+//       accent: $my-accent,
+//       warn: $my-warn,
+//     ),
+//     typography: mat.define-typography-config(),
+//     density: 0,
+//   )
+// );
+
+// $my-theme-light: mat.define-light-theme(
+//   (
+//     color: (
+//       primary: $my-primary-light,
+//       accent: $my-accent,
+//       warn: $my-warn,
+//     ),
+//     typography: mat.define-typography-config(),
+//     density: 0,
+//   )
+// );
+
+// @include mat.all-component-themes($my-theme-dark);
+
+// html:not(.dark) {
+//   @include mat.all-component-themes($my-theme-light);
+// }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can add global styles to this file, and also import other style files */
+@import "assets/styles/animations";
+@import "assets/styles/accordion";
+@import "assets/styles/button";
+@import "assets/styles/input";
+@import "assets/styles/media";
+@import "assets/styles/page";
+@import "assets/styles/scroll";
+@import "assets/styles/select";
+@import "assets/styles/sidenav";
+@import "assets/styles/slide-toggle";
+@import "assets/styles/variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background-color: var(--primary-bg);
+
+  // @media only screen and (max-width: 600px) {
+  //   background-color: var(--drawer-opened);
+  // }
+
+  // @media only screen and (min-width: 601px){
+  //   background-color: transparent;
+  // }
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+
+.noselect {
+  -webkit-touch-callout: none !important; /* iOS Safari */
+  -webkit-user-select: none !important; /* Safari */
+  -khtml-user-select: none !important; /* Konqueror HTML */
+  -moz-user-select: none !important; /* Old versions of Firefox */
+  -ms-user-select: none !important; /* Internet Explorer/Edge */
+  user-select: none !important; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.mat-mdc-dialog-container {
+  --mdc-dialog-container-color: var(--secondary-bg) !important;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+:root {
+  --mat-sidenav-scrim-color: #0009;
+}
+
+.figureGradient {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(1px);
+
+  /* Máscara para o efeito de degradê */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  -webkit-mask-size: 100% 70%;
+  -webkit-mask-repeat: no-repeat;
+
+  /* Para navegadores compatíveis */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  mask-size: 100% 70%;
+  mask-repeat: no-repeat;
+}

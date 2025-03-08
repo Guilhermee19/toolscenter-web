@@ -1,0 +1,32 @@
+mat-accordion {
+  .mat-expansion-panel {
+    background: transparent;
+  }
+  .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+  }
+
+  .mat-expansion-panel-header {
+    --mat-expansion-header-text-color: var(--white);
+    --mat-expansion-header-indicator-color: var(--white);
+
+    min-height: 77px;
+    background-color: var(--card-bg) !important;
+    padding: 20px 16px 20px 16px;
+    border-radius: 5px;
+    border: 1px solid var(--card-border);
+
+    &:hover(),
+    &:active() {
+      background-color: var(--card-bg) !important;
+    }
+
+    .mat-expansion-panel-header-title {
+      font-weight: 400;
+    }
+  }
+
+  .mat-expansion-panel-body {
+    padding: 0;
+  }
+}

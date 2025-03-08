@@ -1,0 +1,431 @@
+@import "./media";
+
+/*
+  ! Navbar
+  ! Se for usar configurações de CSS simples
+  ? ex: padding, bg e color
+  ! Use as variáveis de ambiente no arquivo:
+  * src/styles/_variables.scss
+
+  ! Obrigado :) - Noclaf Tech
+*/
+
+.header {
+  width: 100%;
+  height: 30px;
+  color: #5e6469;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  -webkit-app-region: drag; /* Permite arrastar a janela */
+
+  img {
+    width: 12px;
+    object-fit: contain;
+    margin: 0 0 0 10px;
+  }
+
+  p {
+    padding: 0 8px;
+  }
+
+  nav {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    text-align: right;
+    font-size: 0.8rem;
+
+    > i {
+      padding: 5px;
+      cursor: pointer;
+      padding: 10px 18px;
+
+      &:last-child {
+        &:hover {
+          color: #ffffff;
+          background-color: #e81123;
+        }
+      }
+
+      &:hover {
+        color: #ffffff;
+        background-color: #56565b;
+      }
+    }
+  }
+}
+
+.mat-drawer-container {
+  width: 100%;
+  height: 100%;
+
+  mat-drawer {
+    .btn-drawer {
+      // width: 100%;
+      color: var(--white);
+    }
+
+    form {
+      width: 100%;
+      margin: 0;
+      padding: 0 0.5rem 1.5rem;
+    }
+
+    .list {
+      &.options {
+        height: calc(100% - 100px - 60px);
+
+        .line_space {
+          position: relative;
+          content: "";
+          width: 95%;
+          height: 1px;
+          background-color: var(--white);
+          opacity: 0.3;
+          margin: 10px auto !important;
+          padding: 0 !important;
+        }
+      }
+
+      &.mg_top {
+        margin-top: auto;
+        padding: 0 0 3px 0;
+      }
+
+      &.top {
+        padding: 5px 0 0 0;
+
+        li {
+          max-width: 100%;
+
+          .btn-drawer {
+            --mdc-icon-button-state-layer-size: 45px;
+            width: max-content;
+            padding: 0 5px;
+            min-width: 40px;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid transparent;
+          }
+        }
+      }
+
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      padding: 0 0 0.5rem;
+
+      $h_btn: 40px;
+
+      ::ng-deep li {
+        margin: 0 !important;
+        height: $h_btn;
+        padding: 3px 5px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        a,
+        button {
+          position: relative;
+          display: flex;
+          width: 100%;
+          height: calc($h_btn - 6px);
+          color: var(--white);
+          padding: 0;
+          justify-content: center;
+          align-items: center;
+          box-shadow: none;
+          text-decoration: none;
+          border-radius: 4px;
+          gap: 20px;
+          transition: all 0.2s;
+
+          .line {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 16px;
+            border-radius: 100px;
+            background-color: transparent;
+            transition: all 0.1s;
+          }
+
+          i {
+            width: 20px;
+            height: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: var(--white);
+            font-size: 14px;
+          }
+
+          .one-line {
+            display: none;
+            font-size: 14px;
+          }
+
+          &:hover {
+            background-color: var(--navbar-hover);
+          }
+
+          &.active {
+            position: relative;
+            color: var(--navbar-text-hover);
+            background-color: var(--navbar-hover);
+
+            .line {
+              background-color: var(--main-color);
+              animation: line-start 0.1s;
+            }
+
+            i {
+              color: var(--navbar-text-hover);
+            }
+          }
+        }
+
+        & + li {
+          margin-top: 0.5rem;
+        }
+
+        &:last-of-type {
+          margin-top: auto;
+        }
+      }
+    }
+
+    &.mat-drawer-opened {
+      .list {
+        &.top {
+          padding: 5px;
+
+          li {
+            max-width: 40px;
+            a {
+              padding: 0;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+
+        ::ng-deep li {
+          padding: 3px 0;
+
+          a,
+          button {
+            width: calc(100% - 10px);
+            padding-left: 10px;
+            justify-content: flex-start;
+
+            .one-line {
+              display: flex;
+            }
+          }
+
+          & + li {
+            margin-top: 0.5rem;
+          }
+
+          // &:last-of-type {
+          //   margin-top: auto;
+          // }
+        }
+      }
+    }
+
+    .version {
+      position: absolute;
+      bottom: 2px;
+      text-align: center;
+      width: 100%;
+      opacity: 0.5;
+      color: var(--white);
+    }
+  }
+
+  nav {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--secondary-bg);
+    box-shadow: 2px 2px 8px var(--shadow);
+    transition: var(--ts);
+
+    .content {
+      width: 100%;
+      display: flex;
+      flex-wrap: inherit;
+      align-items: center;
+      justify-content: space-between;
+
+      .btn-drawer {
+        --mdc-icon-button-state-layer-size: 45px;
+        padding: 0;
+
+        i {
+          font-size: 2rem;
+          color: var(--white);
+        }
+      }
+
+      .menu {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .quick-actions {
+          display: flex;
+          align-items: center;
+        }
+
+        .notification {
+          position: relative;
+          .badge {
+            transition: var(--ts);
+            opacity: 0;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: var(--main-color);
+            &.show {
+              opacity: 1;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              top: -2px;
+              left: -2px;
+              width: 5px;
+              height: 5px;
+              border: 2px solid var(--main-color);
+              border-radius: 50%;
+              transform: scale(0.5);
+              opacity: 1;
+              animation: pulse-notification 1.5s infinite;
+            }
+          }
+        }
+        .profile {
+          min-width: 36px;
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          border-radius: 10px;
+
+          .image {
+            min-width: 36px;
+            width: 36px;
+            height: 36px;
+            background-color: var(--main-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // overflow: hidden;
+            i {
+              font-size: 1rem;
+              color: var(--primary-bg);
+            }
+            img {
+              width: 36px;
+              height: 36px;
+              object-fit: cover;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bg_top {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    background-color: var(--secondary-bg);
+
+    span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      border-radius: 50px 0 0 0;
+      // background-color: var(--secondary-bg);
+      background-color: var(--primary-bg);
+    }
+  }
+
+  .screen {
+    width: 100%;
+    // max-width: calc(100% - 250px);
+    // min-height: calc(100% - 40px);
+    // min-height: calc(100vh - 10px);
+    background-color: var(--primary-bg);
+    border-radius: 10px 0 0 0;
+  }
+}
+
+::ng-deep .mat-mdc-menu-panel.notifications-menu {
+  max-height: 600px;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid var(--border-color-light);
+
+  .mat-mdc-menu-content {
+    background-color: var(--secondary-bg);
+
+    h2 {
+      padding: 0.2rem 1rem 0.5rem;
+      margin: 0;
+      color: var(--text-color);
+      border-bottom: 1px solid var(--border-color-light);
+    }
+    .mat-mdc-menu-item {
+      padding: 0.5rem 1rem;
+      color: var(--text-color);
+      .mat-mdc-menu-item-text {
+        display: flex;
+        gap: 0.5rem;
+        & > .icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: var(--primary-bg);
+          box-shadow: 0px 0px 1px 1px var(--primary-bg);
+          flex: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &.unread {
+            color: var(--main-color);
+            box-shadow: 0px 0px 1px 1px var(--main-color);
+          }
+        }
+      }
+
+      & + .mat-mdc-menu-item {
+        border-top: 1px solid var(--border-color-light);
+      }
+    }
+  }
+}
+
+app-button-action {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 900;
+}
