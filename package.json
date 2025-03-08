@@ -1,13 +1,17 @@
 {
   "name": "toolscenter-web",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:toolscenter-web": "node dist/toolscenter-web/server/server.mjs"
+    "serve:ssr:toolscenter-web": "node dist/toolscenter-web/server/server.mjs",
+    "post-release": "ts-node ./version.ts && git c \"chore(env): update enviroment versions\" && git push --tags",
+    "release:ma": "standard-version --release-as major && npm run post-release",
+    "release:mi": "standard-version --release-as minor && npm run post-release",
+    "release:p": "standard-version --release-as patch && npm run post-release"
   },
   "private": true,
   "dependencies": {
