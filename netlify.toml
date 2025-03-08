@@ -4,7 +4,7 @@
   publish = "dist/toolscenter-web/browser"
 
 [build.environment]
-  NODE_VERSION = "18.13.0"
+  NODE_VERSION = "18.19.0"
 
 [[redirects]]
   from = "/"
