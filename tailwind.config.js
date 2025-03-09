@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       width:{
-        'calc90': 'calc(100% - 10px)'
+        'calc90': 'calc(100% - 10px)',
+        'calc50': 'calc(50% - 0.5rem)'
       },
       height:{
-
+        'call-default': 'calc(100vh - 26px - 1rem - 134px - 1rem - 10px )'
       },
       colors:{
         'main': '#4cc2ff',

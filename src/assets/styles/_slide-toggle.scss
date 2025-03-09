@@ -1,39 +1,43 @@
-.mat-mdc-slide-toggle{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mat-mdc-slide-toggle {
   --mdc-switch-track-width: 40px !important;
   --mat-switch-with-icon-handle-size: 14px !important;
   --mdc-switch-track-height: 20px !important;
   --mdc-switch-track-shape: 50px !important;
 
-  &.mat-primary{
-    --mdc-switch-unselected-hover-track-color: var(--input-bg);
-    --mdc-switch-unselected-track-color: var(--input-bg);
-    --mat-switch-track-outline-color: var(--slide-border) !important;
+  // &.mat-primary {
+  //   --mdc-switch-unselected-hover-track-color: var(--input-bg);
+  //   --mdc-switch-unselected-track-color: var(--input-bg);
+  //   --mat-switch-track-outline-color: var(--slide-border) !important;
 
-    --mdc-switch-unselected-handle-color: var(--slide-color);
-    --mdc-switch-unselected-hover-handle-color: var(--slide-color);
-    --mdc-switch-unselected-pressed-handle-color: var(--slide-color);
-    --mdc-switch-unselected-track-handle-color: var(--slide-color);
+  //   --mdc-switch-unselected-handle-color: var(--slide-color);
+  //   --mdc-switch-unselected-hover-handle-color: var(--slide-color);
+  //   --mdc-switch-unselected-pressed-handle-color: var(--slide-color);
+  //   --mdc-switch-unselected-track-handle-color: var(--slide-color);
 
-    --mdc-switch-selected-handle-color: var(--secondary-bg);
-    --mdc-switch-selected-focus-handle-color: var(--secondary-bg);
-    --mdc-switch-selected-pressed-handle-color: var(--secondary-bg);
-    --mdc-switch-unselected-focus-handle-color: var(--secondary-bg) !important;
+  //   --mdc-switch-selected-handle-color: var(--secondary-bg);
+  //   --mdc-switch-selected-focus-handle-color: var(--secondary-bg);
+  //   --mdc-switch-selected-pressed-handle-color: var(--secondary-bg);
+  //   --mdc-switch-unselected-focus-handle-color: var(--secondary-bg) !important;
 
-    --mdc-switch-selected-focus-track-color: var(--main-color);
-    --mdc-switch-selected-hover-track-color: var(--main-color);
-    --mdc-switch-selected-pressed-track-color: var(--main-color);
-    --mdc-switch-selected-track-color: var(--main-color);
+  //   --mdc-switch-selected-focus-track-color: var(--main-color);
+  //   --mdc-switch-selected-hover-track-color: var(--main-color);
+  //   --mdc-switch-selected-pressed-track-color: var(--main-color);
+  //   --mdc-switch-selected-track-color: var(--main-color);
 
-    .mdc-switch__icons{
-      opacity: 0 !important;
-    }
+  //   .mdc-switch__icons {
+  //     opacity: 0 !important;
+  //   }
 
-    .mdc-switch__handle{
-      left: 3px !important;
-    }
-  }
+  //   .mdc-switch__handle {
+  //     left: 3px !important;
+  //   }
+  // }
 
-  .mdc-form-field{
+  .mdc-form-field {
     flex-direction: row-reverse;
     gap: 10px;
     color: var(--white);

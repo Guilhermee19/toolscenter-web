@@ -56,6 +56,8 @@
 @import "assets/styles/sidenav";
 @import "assets/styles/slide-toggle";
 @import "assets/styles/variables";
+@import "codemirror/lib/codemirror";
+@import "codemirror/theme/material";
 
 * {
   padding: 0;

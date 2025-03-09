@@ -1,1 +1,129 @@
-<p>json-format-validate works!</p>
+<section class="page" id="jsonFormat">
+  <div class="container !size-full" data-aos="fade-up" data-aos-duration="300">
+    <div class="rows">
+      <h2>{{ "json_to_typescript.title_page" | translate }}</h2>
+      <!-- <app-favorite-activity screen="json_to_typescript" /> -->
+    </div>
+
+    <!-- <header class="mb-4">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ "json_to_typescript.options" | translate }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <form class="card_config" [formGroup]="image_form">
+            <div class="information">
+              <div class="text">
+                {{ "json_to_typescript.create_monotype" | translate }}
+              </div>
+            </div>
+
+            <mat-slide-toggle
+              formControlName="mono_type"
+              color="primary"
+              (change)="onEditorInit()"
+            >
+              {{
+                image_form.value.mono_type
+                  ? ("global.activated" | translate)
+                  : ("global.disabled" | translate)
+              }}
+            </mat-slide-toggle>
+          </form>
+
+          <form class="card_config" [formGroup]="image_form">
+            <div class="information">
+              <div class="text">
+                {{
+                  "json_to_typescript.sort_json_properties_alphabetically"
+                    | translate
+                }}
+              </div>
+            </div>
+
+            <mat-slide-toggle
+              formControlName="order"
+              color="primary"
+              (change)="onEditorInit()"
+            >
+              {{
+                image_form.value.order
+                  ? ("global.activated" | translate)
+                  : ("global.disabled" | translate)
+              }}
+            </mat-slide-toggle>
+          </form>
+
+          <form class="card_config" [formGroup]="image_form">
+            <div class="information">
+              <div class="text">
+                {{ "json_to_typescript.reverse_generation_order" | translate }}
+              </div>
+            </div>
+
+            <mat-slide-toggle
+              formControlName="invert"
+              color="primary"
+              (change)="onEditorInit()"
+            >
+              {{
+                image_form.value.invert
+                  ? ("global.activated" | translate)
+                  : ("global.disabled" | translate)
+              }}
+            </mat-slide-toggle>
+          </form>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </header> -->
+
+    <div class="colls !size-full grid grid-cols-2 gap-4 min-h-call-default">
+      <form [formGroup]="image_form" class="content !size-full">
+        <div class="buttons">
+          <button
+            mat-button
+            class="secondary f-10 ml-auto"
+            (click)="clearInput()"
+          >
+            {{ "text_convert.clear" | translate }}
+          </button>
+        </div>
+
+        <div class="card_input relative !size-full">
+          <label class="text-sm"> JSON </label>
+
+          <ngx-codemirror
+            class="code_input"
+            formControlName="json"
+            [options]="configCodemirror"
+          ></ngx-codemirror>
+        </div>
+      </form>
+
+      <form [formGroup]="image_form" class="content !size-full">
+        <div class="buttons">
+          <button
+            mat-button
+            class="secondary f-10 ml-auto"
+            (click)="copyText()"
+          >
+            {{ "global.copy" | translate }}
+          </button>
+        </div>
+
+        <div class="card_input relative !size-full">
+          <label class="text-sm"> TypeScript </label>
+
+          <ngx-codemirror
+            class="code_input"
+            formControlName="decode"
+            [options]="configCodemirror"
+          ></ngx-codemirror>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
