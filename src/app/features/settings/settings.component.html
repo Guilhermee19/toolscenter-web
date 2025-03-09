@@ -1,0 +1,79 @@
+<section class="page" id="settings">
+  <div class="container" data-aos="fade-up" data-aos-duration="300">
+    <div class="rows">
+      <h2 class="text-2xl">{{ "settings.title_page" | translate }}</h2>
+    </div>
+
+    <h3 class="text-xl !my-4 !ml-2 subtitle">
+      {{ "settings.appearance" | translate }}
+    </h3>
+
+    <header class="w-full">
+      <!-- <div class="card_config">
+        <i icon="brush"></i>
+
+        <div class="information">
+          <div class="text">{{ "settings.theme" | translate }}</div>
+        </div>
+
+        <mat-select [(ngModel)]="theme" name="theme">
+          <mat-option value="dark" (click)="toggleTheme()">
+            {{ "settings.dark" | translate }}
+          </mat-option>
+          <mat-option value="light" (click)="toggleTheme()">
+            {{ "settings.light" | translate }}
+          </mat-option>
+        </mat-select>
+      </div> -->
+
+      <div class="card_config">
+        <i icon="language"></i>
+
+        <div class="information">
+          <div class="text">{{ "settings.language" | translate }}</div>
+        </div>
+
+        <mat-select
+          [(ngModel)]="language"
+          name="language"
+          (selectionChange)="eventSelect()"
+        >
+          <mat-option value="pt-br"> Português </mat-option>
+          <mat-option value="en"> Inglês </mat-option>
+        </mat-select>
+      </div>
+
+      <!-- <header>
+        <div class="card_config mg_top">
+          <i icon="arrow_up_wide_short"></i>
+
+          <div class="information">
+            <div class="text"> Ordenação das telas </div>
+          </div>
+
+          <mat-select [(ngModel)]="order" name="ordeer">
+            @for (item of orders; track $index) {
+              <mat-option [value]="item.order"> {{ item.label }} </mat-option>
+            }
+          </mat-select>
+        </div>
+      </header> -->
+    </header>
+
+    <h3 class="text-xl !my-4 !ml-2 subtitle">
+      {{ "settings.version" | translate }}
+    </h3>
+
+    <header>
+      <div class="card_config mg_top">
+        <i icon="square_info"></i>
+
+        <div class="information">
+          <div class="text">{{ "settings.version" | translate }}</div>
+        </div>
+
+        <p>{{ version }}v</p>
+      </div>
+    </header>
+  </div>
+</section>
