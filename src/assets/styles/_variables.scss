@@ -1,74 +1,75 @@
+// :root {
+//   font-size: calc(10px + 0.3125vw);
+//   --ts: all 0.3s linear;
+//   --br: 4px;
+
+//   --bg_navbar: rgba(240, 240, 240, 0.1);
+
+//   --main-color: #4cc2ff;
+
+//   // --primary-bg: rgba(255, 255, 255, 0.6);
+//   // --secondary-bg: rgba(236, 236, 236, 0.6);
+//   --primary-bg: #f9f9f9;
+//   --secondary-bg: #f3f3f3;
+//   --drawer-opened: #f3f3f3;
+
+//   --label: #55596f;
+//   --input-bg: rgba(251, 252, 253, 0.6);
+
+//   --white: #000000;
+//   --gray: #607d8a;
+//   --red: #ff7673;
+//   --orange: #ffbb5c;
+//   --orange: #ffd74e;
+//   --green: #6de194;
+//   --ciano: #63ecdb;
+//   --ice: #5acff5;
+//   --blue: #70b1ff;
+//   --purple: #b072ff;
+
+//   // ? Input ngx-monaco-editor
+//   --editor-bg: #fffffe;
+
+//   // ? Buttons
+//   --button-bg: #fbfbfb;
+//   --button-hover: #f6f6f6;
+//   --button-border: #eaeaea;
+
+//   // ? Cards
+//   --card-bg: #f9f9f9;
+//   --card-border: #ececec;
+
+//   // ? Slide Toggle
+//   --slide-color: #5b5b5b;
+//   --slide-border: transparent;
+
+//   // ? Select
+//   --select-bg: #fefefe;
+//   --select-options-bg: #f9f9f9;
+//   --select-border: #ececec;
+//   --select-active: #f2f3f3;
+
+//   // ? Scrollbar
+//   --scroll-track: var(--secondary-bg);
+//   --scroll-thumb: var(--tertiary-bg);
+
+//   // ? Navbar variables
+//   --navbar-max-width: 1440px;
+//   --navbar-logo-height: 40px;
+//   --navbar-position: absolute;
+//   --navbar-top-bg: var(--green-color); // transparent
+//   --navbar-top-color: #000000;
+//   --navbar-top-padding: 5px 10px 5px 20px;
+//   --navbar-scroll-bg: #f00;
+//   --navbar-scroll-color: #fff;
+//   --navbar-scroll-padding: 0 10px;
+
+//   --navbar-text-hover: var(--white);
+//   --navbar-hover: #e0e0e0;
+// }
+
+// .dark:root {
 :root {
-  font-size: calc(10px + 0.3125vw);
-  --ts: all 0.3s linear;
-  --br: 4px;
-
-  --bg_navbar: rgba(240, 240, 240, 0.1);
-
-  --main-color: #4cc2ff;
-
-  // --primary-bg: rgba(255, 255, 255, 0.6);
-  // --secondary-bg: rgba(236, 236, 236, 0.6);
-  --primary-bg: #f9f9f9;
-  --secondary-bg: #f3f3f3;
-  --drawer-opened: #f3f3f3;
-
-  --label: #55596f;
-  --input-bg: rgba(251, 252, 253, 0.6);
-
-  --white: #000000;
-  --gray: #607d8a;
-  --red: #ff7673;
-  --orange: #ffbb5c;
-  --orange: #ffd74e;
-  --green: #6de194;
-  --ciano: #63ecdb;
-  --ice: #5acff5;
-  --blue: #70b1ff;
-  --purple: #b072ff;
-
-  // ? Input ngx-monaco-editor
-  --editor-bg: #fffffe;
-
-  // ? Buttons
-  --button-bg: #fbfbfb;
-  --button-hover: #f6f6f6;
-  --button-border: #eaeaea;
-
-  // ? Cards
-  --card-bg: #f9f9f9;
-  --card-border: #ececec;
-
-  // ? Slide Toggle
-  --slide-color: #5b5b5b;
-  --slide-border: transparent;
-
-  // ? Select
-  --select-bg: #fefefe;
-  --select-options-bg: #f9f9f9;
-  --select-border: #ececec;
-  --select-active: #f2f3f3;
-
-  // ? Scrollbar
-  --scroll-track: var(--secondary-bg);
-  --scroll-thumb: var(--tertiary-bg);
-
-  // ? Navbar variables
-  --navbar-max-width: 1440px;
-  --navbar-logo-height: 40px;
-  --navbar-position: absolute;
-  --navbar-top-bg: var(--green-color); // transparent
-  --navbar-top-color: #000000;
-  --navbar-top-padding: 5px 10px 5px 20px;
-  --navbar-scroll-bg: #f00;
-  --navbar-scroll-color: #fff;
-  --navbar-scroll-padding: 0 10px;
-
-  --navbar-text-hover: var(--white);
-  --navbar-hover: #e0e0e0;
-}
-
-.dark:root {
   font-size: calc(10px + 0.3125vw);
   --ts: all 0.3s linear;
 
