@@ -8,6 +8,10 @@ export class LanguageService {
   private translate = inject(TranslateService);
 
   get current() {
+    if (typeof window === "undefined") {
+      return "pt-br"; // Valor padrão caso esteja rodando no servidor
+    }
+
     const allLangs = this.translate.getLangs();
     const browserLang = allLangs.includes(this.translate.getBrowserLang() || "")
       ? this.translate.getBrowserLang()
@@ -22,7 +26,9 @@ export class LanguageService {
   }
 
   set current(value: string) {
-    localStorage.setItem("language", value);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", value);
+    }
     this.translate.use(value);
   }
 }

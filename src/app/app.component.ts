@@ -7,9 +7,7 @@ import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-  ],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
@@ -19,26 +17,22 @@ export class AppComponent implements OnInit {
   title = 'toolscenter-web';
 
   public ngOnInit() {
-    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+    if (typeof window !== 'undefined') {
       // Inicializa AOS apenas no lado do cliente
       AOS.init();
     }
 
     this.theme.loadCurrentTheme();
+    this.translate.setDefaultLang('pt-br');
 
-    this.translate.setDefaultLang("pt-br");
+    // Verifica se localStorage está disponível antes de acessá-lo
+    const language = typeof window !== 'undefined' ? localStorage.getItem('language') : null;
 
-    // Verificar se estamos no lado do cliente antes de acessar localStorage
-    let language: string | null = null;
-    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      language = localStorage.getItem("language");
-    }
+    // Garante que browserLang seja sempre uma string
+    const browserLang = this.translate.getBrowserLang() || 'pt-br';
+    const defaultLang = browserLang === 'pt' ? 'pt-br' : browserLang;
+    const validLang = ['pt-br', 'en'].includes(defaultLang) ? defaultLang : 'pt-br';
 
-    let browserLang = this.translate.getBrowserLang();
-    browserLang = browserLang === "pt" ? "pt-br" : browserLang;
-    browserLang = browserLang?.match(/pt-br|en/) ? browserLang : "pt-br";
-
-    // Usa o idioma da localStorage se disponível, senão, usa o idioma do navegador ou o padrão
-    this.translate.use(language || (browserLang === 'pt-br' ? 'pt-br' : 'en'));
+    this.translate.use(language ?? validLang);
   }
 }

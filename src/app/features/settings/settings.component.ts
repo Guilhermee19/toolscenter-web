@@ -38,22 +38,26 @@ export class SettingsComponent {
   orders = [
     { label: 'Ordem Padrão', order: 'default'},
     { label: 'Ordem Inteligente', order: 'intelligent'},
-    { label: 'Ordem Alfabetica', order: 'alphabetical'},
-  ]
+    { label: 'Ordem Alfabética', order: 'alphabetical'},
+  ];
 
   ngOnInit(): void {
     this.translate.setDefaultLang("pt-br");
 
-    const language = localStorage.getItem("language") as 'en' | 'pt-br';
+    const language = localStorage.getItem("language") as "en" | "pt-br" | null;
 
-    let browserLang = this.translate.getBrowserLang();
+    let browserLang = this.translate.getBrowserLang() || 'pt-br';
     browserLang = browserLang === "pt" ? "pt-br" : browserLang;
-    browserLang = browserLang?.match(/pt-br|en/) ? browserLang : "pt-br";
-    this.translate.use(language || (browserLang === 'pt-br' ? 'pt-br' : 'en'));
-    this.language = (language || (browserLang === 'pt-br' ? 'pt-br' : 'en'))
+
+    // Garantindo que o browserLang seja um dos valores aceitos
+    const validLang = (['pt-br', 'en'].includes(browserLang) ? browserLang : 'pt-br') as "en" | "pt-br";
+
+    // Definir a linguagem preferida com tipo correto
+    this.language = language ?? validLang;
+    this.translate.use(this.language);
 
     this.light = this.themeService.theme === 'light';
-    this.theme = this.light ? 'light' : 'dark'
+    this.theme = this.light ? 'light' : 'dark';
   }
 
   toggleTheme() {
@@ -61,8 +65,8 @@ export class SettingsComponent {
     this.light = !this.light;
   }
 
-  eventSelect(){
-    this.selectLang(this.language)
+  eventSelect() {
+    this.selectLang(this.language);
   }
 
   selectLang(language: "en" | "pt-br") {

@@ -6,23 +6,28 @@ import { IColorPicker, ITextConvert } from '../../core/models/config';
 })
 export class SaveConfigService {
 
+  private isLocalStorageAvailable(): boolean {
+    return typeof localStorage !== 'undefined';
+  }
+
   // ? ------------
   // ? TEXT CONVERT
   // ? ------------
 
-  get textConvert(){
-    const storage = localStorage.getItem('TEXT_CONVERT')
-    if(!storage) return {} as ITextConvert;
+  get textConvert(): ITextConvert {
+    if (!this.isLocalStorageAvailable()) return {} as ITextConvert;
 
-    const TEXT_CONVERT: ITextConvert = JSON.parse(storage)
-    return TEXT_CONVERT || {} as ITextConvert;
+    const storage = localStorage.getItem('TEXT_CONVERT');
+    return storage ? JSON.parse(storage) : {} as ITextConvert;
   }
 
-  set textConvert(obj: ITextConvert){
-    localStorage.setItem('TEXT_CONVERT', JSON.stringify({action: obj.action, encode: obj.encode, decode: obj.decode}))
+  set textConvert(obj: ITextConvert) {
+    if (this.isLocalStorageAvailable()) {
+      localStorage.setItem('TEXT_CONVERT', JSON.stringify({
+        action: obj.action, encode: obj.encode, decode: obj.decode
+      }));
+    }
   }
-
-
 
   // ? ------------
   // ? COLOR PICKER
@@ -30,17 +35,21 @@ export class SaveConfigService {
 
   objColorPicker: IColorPicker = {} as IColorPicker;
 
-  get colorPicker(){
-    const storage = localStorage.getItem('COLOR_PICKER')
-    if(!storage) return {} as IColorPicker;
+  get colorPicker(): IColorPicker {
+    if (!this.isLocalStorageAvailable()) return {} as IColorPicker;
 
-    const COLOR_PICKER: IColorPicker = JSON.parse(storage)
-    if(!COLOR_PICKER) return {} as IColorPicker;
-    this.objColorPicker = COLOR_PICKER;
-    return this.objColorPicker
+    const storage = localStorage.getItem('COLOR_PICKER');
+    if (!storage) return {} as IColorPicker;
+
+    this.objColorPicker = JSON.parse(storage);
+    return this.objColorPicker;
   }
 
-  set colorPicker(obj: IColorPicker){
-    localStorage.setItem('COLOR_PICKER', JSON.stringify({color: obj.color, save: obj.save, mode: obj.mode}))
+  set colorPicker(obj: IColorPicker) {
+    if (this.isLocalStorageAvailable()) {
+      localStorage.setItem('COLOR_PICKER', JSON.stringify({
+        color: obj.color, save: obj.save, mode: obj.mode
+      }));
+    }
   }
 }
