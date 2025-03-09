@@ -138,3 +138,15 @@ body {
   mask-size: 100% 70%;
   mask-repeat: no-repeat;
 }
+
+.card-border {
+  width: 100%;
+  min-height: 77px;
+  background-color: var(--card-bg);
+  padding: 20px 10px 20px 16px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid var(--card-border);
+}

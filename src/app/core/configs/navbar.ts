@@ -23,14 +23,14 @@ export const NAVBAR_PAGES = [
   //   order: 2,
   //   roles: ['mode_dev', 'trainee'],
   // },
-  {
-    label: 'navbar.text_convert',
-    link: 'text-convert',
-    icon: 'text_size',
-    count: 1,
-    order: 3,
-    roles: ['mode_dev', 'trainee'],
-  },
+  // {
+  //   label: 'navbar.text_convert',
+  //   link: 'text-convert',
+  //   icon: 'text_size',
+  //   count: 1,
+  //   order: 3,
+  //   roles: ['mode_dev', 'trainee'],
+  // },
   // {
   //   label: 'navbar.qrcode_generator',
   //   link: 'qrcode-generator',

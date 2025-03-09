@@ -7,6 +7,7 @@ a[role="button"] {
 }
 
 html {
+  .mat-mdc-unelevated-button,
   .mat-mdc-raised-button,
   .mat-mdc-button,
   .mdc-button {
@@ -52,6 +53,15 @@ html {
       i {
         color: var(--navbar-text-hover);
       }
+    }
+  }
+
+  .mat-mdc-unelevated-button {
+    @apply w-max  min-w-12 min-h-10 flex justify-center items-center rounded px-4 py-[3px] transition-all border border-solid border-[#3f3f3f];
+    @apply bg-[#444444] font-medium text-xs #{!important};
+
+    .mdc-button__label {
+      @apply text-[#fff];
     }
   }
 }

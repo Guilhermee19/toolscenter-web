@@ -1,1 +1,183 @@
-<p>text-convert works!</p>
+<section class="page" id="textConvert">
+  <div class="container" data-aos="fade-up" data-aos-duration="300">
+    <div class="rows">
+      <h2>{{ "text_convert.title_page" | translate }}</h2>
+      <!-- <app-favorite-activity screen="text_convert" /> -->
+    </div>
+
+    <header>
+      <form
+        class="w-full flex flex-col gap-4 card-border"
+        [formGroup]="text_form"
+      >
+        <div class="text-white text-left text-base mr-auto">
+          {{ "text_convert.conversion" | translate }}
+        </div>
+
+        <div class="w-full flex flex-wrap justify-start gap-2">
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('lower_case')"
+            class="f-10"
+            (click)="setAction('lower_case')"
+          >
+            lower case
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('upper_case')"
+            class="f-10"
+            (click)="setAction('upper_case')"
+          >
+            UPPER CASE
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('sentence_case')"
+            class="f-10"
+            (click)="setAction('sentence_case')"
+          >
+            Sentence case
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('title_case')"
+            class="f-10"
+            (click)="setAction('title_case')"
+          >
+            Title Case
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('camel_case')"
+            class="f-10"
+            (click)="setAction('camel_case')"
+          >
+            camelCase
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('pascal_case')"
+            class="f-10"
+            (click)="setAction('pascal_case')"
+          >
+            PascalCase
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('snake_case')"
+            class="f-10"
+            (click)="setAction('snake_case')"
+          >
+            snake_case
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('constant_case')"
+            class="f-10"
+            (click)="setAction('constant_case')"
+          >
+            CONSTANT_CASE
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('kebab_case')"
+            class="f-10"
+            (click)="setAction('kebab_case')"
+          >
+            kebab-case
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('cobol_case')"
+            class="f-10"
+            (click)="setAction('cobol_case')"
+          >
+            COBOL-CASE
+          </button>
+          <button
+            type="button"
+            mat-flat-button
+            [color]="setClass('train_case')"
+            class="f-10"
+            (click)="setAction('train_case')"
+          >
+            Train-Case
+          </button>
+        </div>
+      </form>
+    </header>
+
+    <form class="colls" [formGroup]="text_form">
+      <div class="content">
+        <div class="buttons end">
+          <!-- <button mat-mini-fab color="primary" type="button" title="icon copy" class="f-10" (click)="pasteText()"> <i icon="paste"></i> </button> -->
+          <button
+            mat-mini-fab
+            color="primary"
+            type="button"
+            title="icon paste"
+            class="f-10"
+            (click)="copyText(text_form.value.encode)"
+          >
+            <i icon="copy"></i>
+          </button>
+          <button
+            mat-mini-fab
+            class="f-10"
+            type="button"
+            title="icon clean"
+            (click)="clearInput()"
+          >
+            <i icon="broom_wide"></i>
+          </button>
+        </div>
+
+        <div class="card_input">
+          <label> {{ "global.text_entry" | translate }} </label>
+
+          <ngx-codemirror
+            class="code_input"
+            formControlName="encode"
+            [options]="configCodemirror"
+          ></ngx-codemirror>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="buttons end">
+          <button
+            mat-mini-fab
+            color="primary"
+            type="button"
+            title="icon paste"
+            class="f-10"
+            (click)="copyText(text_form.value.decode)"
+          >
+            <i icon="copy"></i>
+          </button>
+        </div>
+
+        <div class="card_input">
+          <label> {{ "global.text_output" | translate }} </label>
+
+          <ngx-codemirror
+            class="code_input"
+            formControlName="decode"
+            [options]="configCodemirror"
+          ></ngx-codemirror>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
