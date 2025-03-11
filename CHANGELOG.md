@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/Guilhermee19/toolscenter-web/compare/v1.2.2...v1.2.3) (2025-03-11)
+
+
+### Features
+
+* ads.txt ([e11e619](https://github.com/Guilhermee19/toolscenter-web/commit/e11e61994c1b8bccff6e26b83136a0df307c39ba))
+
 ### [1.2.2](https://github.com/Guilhermee19/toolscenter-web/compare/v1.2.1...v1.2.2) (2025-03-11)
 
 
