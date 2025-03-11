@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/Guilhermee19/toolscenter-web/compare/v1.2.1...v1.2.2) (2025-03-11)
+
+
+### Bug Fixes
+
+* lib e config codemirror ([baca433](https://github.com/Guilhermee19/toolscenter-web/commit/baca433c2c7739c032d5bae55cd50b1e2a6c0528))
+* teg meta ([523d59d](https://github.com/Guilhermee19/toolscenter-web/commit/523d59d72fb7a900820d62191b21542621836d05))
+
 ### [1.2.1](https://github.com/Guilhermee19/toolscenter-web/compare/v1.2.0...v1.2.1) (2025-03-09)
 
 ## [1.2.0](https://github.com/Guilhermee19/toolscenter-web/compare/v1.1.1...v1.2.0) (2025-03-09)
