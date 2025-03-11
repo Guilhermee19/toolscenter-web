@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { afterNextRender, Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ThemeService } from './shared/services/theme.service';
@@ -16,12 +16,13 @@ export class AppComponent implements OnInit {
 
   title = 'toolscenter-web';
 
-  public ngOnInit() {
-    if (typeof window !== 'undefined') {
-      // Inicializa AOS apenas no lado do cliente
+  public constructor() {
+    afterNextRender(() => {
       AOS.init();
-    }
+    });
+  }
 
+  public ngOnInit() {
     this.theme.loadCurrentTheme();
     this.translate.setDefaultLang('pt-br');
 

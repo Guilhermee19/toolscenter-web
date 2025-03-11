@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -8,8 +8,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ConvertInterfaceService } from '../../../shared/services/convert-interface.service';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { CodeMirrorOptions } from '../../../core/models/codemirror';
-import "codemirror/mode/javascript/javascript";
-import 'codemirror/theme/darcula.css';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-json-format-validate',
@@ -30,8 +29,9 @@ import 'codemirror/theme/darcula.css';
 export class JsonFormatValidateComponent implements OnInit {
   private fb = inject(FormBuilder);
   private convert = inject(ConvertInterfaceService);
+  private platformId = inject(PLATFORM_ID);
 
-  public isBrowser = typeof window !== 'undefined';
+  public isBrowser = isPlatformBrowser(this.platformId);
 
   public configCodemirror: CodeMirrorOptions = {
     lineNumbers: true,
@@ -53,12 +53,19 @@ export class JsonFormatValidateComponent implements OnInit {
     mono_type: [false],
   });
 
-  public ngOnInit() {
-
+  public async ngOnInit() {
     if (this.isBrowser) {
+      await this.loadCodeMirror();
       this.image_form.get('json')?.valueChanges.subscribe(() => {
         this.onEditorInit();
       });
+    }
+  }
+
+  private async loadCodeMirror() {
+    if (this.isBrowser) {
+      await import('codemirror/mode/javascript/javascript').catch(() => {});
+      await import('codemirror/theme/darcula.css').catch(() => {});
     }
   }
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { IconDirective } from '../../shared/directives/icon.directive';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
@@ -20,5 +20,5 @@ import { StorageService } from '../../shared/services/storage.service';
 export class HomeComponent {
   private storage = inject(StorageService)
 
-  navbarPages = this.storage.getNavbar();
+  public navbarPages = signal(this.storage.getNavbar());
 }

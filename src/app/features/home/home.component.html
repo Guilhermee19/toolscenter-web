@@ -9,7 +9,7 @@
 </figure>
 
 <section class="page w-full relative z-20 overflow-hidden" id="home">
-  <div class="container" data-aos="fade-up" data-aos-duration="300">
+  <div class="container">
     <div class="mb-20">
       <h1 class="text-5xl text-white font-light">
         {{ "home_panel.welcome" | translate }}
@@ -20,7 +20,7 @@
     <div
       class="w-full grid grid-cols-4 justify-start items-start flex-wrap gap-4"
     >
-      @for (nav of navbarPages; track $index) {
+      @for (nav of navbarPages(); track $index) {
       <a
         class="size-full flex flex-col justify-center items-center gap-4 rounded-xl p-8 bg-card-opacity shadow-card-opacity backdrop-filter border border-solid border-border-opacity transition-all"
         [routerLink]="nav.link"
