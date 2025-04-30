@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+  functions = "netlify/functions"
+
+[dev]
+  command = "next dev"
+  port = 8888
+  target = "serverless"
