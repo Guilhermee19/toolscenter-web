@@ -4,6 +4,7 @@ import "./globals.css";
 
 import SidebarCustom from "@/components/sidbar-custom";
 import { cn } from "@/lib/utils";
+import CardScreen from "@/components/card-screen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,11 +38,7 @@ export default function RootLayout({
         >
           <SidebarCustom />
 
-          <div className="w-full flex flex-1 lg:ml-2 h-[calc(100dvh-2rem)] lg:h-auto">
-            <div className="flex h-11/12 mt-auto w-full flex-1 flex-col gap-2 rounded-2xl bg-[#1f2735] p-4 md:p-6 shadow-2xl">
-              {children}
-            </div>
-          </div>
+          <CardScreen>{children}</CardScreen>
         </div>
       </body>
     </html>
