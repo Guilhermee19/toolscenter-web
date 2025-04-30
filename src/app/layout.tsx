@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ToolsCenter",
-  description: "ToolsCenter - Ferramentas para desenvolvedores",
+  title: "Tools Center",
+  description: "Tools Center - Ferramentas para desenvolvedores",
 };
 
 export default function RootLayout({
