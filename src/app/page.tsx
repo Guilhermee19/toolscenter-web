@@ -1,5 +1,6 @@
 "use client";
 
+import AdComponent from "@/components/ad-component";
 import { NAVBAR_PAGES } from "../../public/mocks/navbar";
 
 const Home = () => {
@@ -7,6 +8,8 @@ const Home = () => {
 
   return (
     <div>
+      <AdComponent adSlot="XXXX" />
+
       <div className="relative flex flex-col gap-2 w-full h-full">
         <div className="relative z-20 flex flex-col gap-2 w-full h-full">
           <h1 className="text-4xl font-light text-white">
