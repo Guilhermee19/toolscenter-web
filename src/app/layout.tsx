@@ -4,7 +4,7 @@ import "./globals.css";
 
 import SidebarCustom from "@/components/sidbar-custom";
 import { cn } from "@/lib/utils";
-import Head from "next/head";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta name="google-adsense-account" content="ca-pub-7471699067461249" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7471699067461249"
-          crossOrigin="anonymous"
-        ></script>
-      </Head>
+      {/* ✅ Script fora de <Head>, correto no App Router */}
+      <Script
+        strategy="afterInteractive"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7471699067461249"
+        crossOrigin="anonymous"
+      />
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-4 pl-2 w-full min-h-dvh bg-gradient-to-b from-[#15191f] to-[#000000]`}

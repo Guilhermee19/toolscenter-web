@@ -23,6 +23,7 @@
     "next": "15.3.1",
     "next-intl": "^4.1.0",
     "next-qrcode": "^2.5.1",
+    "nextjs-google-adsense": "^1.0.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
