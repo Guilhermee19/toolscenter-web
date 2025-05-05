@@ -4,6 +4,8 @@ import "./globals.css";
 
 import SidebarCustom from "@/components/sidbar-custom";
 import { cn } from "@/lib/utils";
+import Head from "next/head";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,17 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Google Ads Tag */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7471699067461249"
-          crossOrigin="anonymous"
-        ></script>
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-4 pl-2 w-full min-h-dvh bg-gradient-to-b from-[#15191f] to-[#000000]`}
       >
+        {/* ✅ CORRETO */}
+        <Script
+          strategy="afterInteractive"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7471699067461249"
+          crossOrigin="anonymous"
+        />
+
         <div
           className={cn(
             "flex w-full flex-1 flex-col overflow-hidden md:flex-row"
