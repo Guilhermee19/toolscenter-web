@@ -4,7 +4,6 @@ import "./globals.css";
 
 import SidebarCustom from "@/components/sidbar-custom";
 import { cn } from "@/lib/utils";
-import Head from "next/head";
 import Script from "next/script";
 
 const geistSans = Geist({
