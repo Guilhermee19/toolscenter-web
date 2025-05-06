@@ -28,17 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* ✅ Script fora de <Head>, correto no App Router */}
-      <Script
-        strategy="afterInteractive"
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7471699067461249"
-        crossOrigin="anonymous"
-      />
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-4 pl-2 w-full min-h-dvh bg-gradient-to-b from-[#15191f] to-[#000000]`}
       >
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7471699067461249"
+          crossOrigin="anonymous"
+        />
         <div
           className={cn(
             "flex w-full flex-1 flex-col overflow-hidden md:flex-row"
