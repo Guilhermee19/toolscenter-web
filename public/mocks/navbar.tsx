@@ -1,4 +1,4 @@
-import { CaseSensitive, MessageSquareCode, QrCode } from "lucide-react";
+import { Braces, CaseSensitive, MessageSquareCode, QrCode } from "lucide-react";
 
 export const NAVBAR_PAGES = [
   {
@@ -15,5 +15,10 @@ export const NAVBAR_PAGES = [
     label: "Base64 Image",
     href: "/base-to-image",
     icon: <MessageSquareCode className="h-5 w-5 shrink-0 text-white" />,
+  },
+  {
+    label: "TS Type Generator",
+    href: "/type-generator",
+    icon: <Braces className="h-5 w-5 shrink-0 text-white" />,
   },
 ];

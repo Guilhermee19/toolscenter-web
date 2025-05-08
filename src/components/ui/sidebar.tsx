@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import React, { useState, createContext, useContext } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import { Menu, X } from "lucide-react";
 
 interface Links {
   label: string;
@@ -85,23 +86,28 @@ export const DesktopSidebar = ({
   ...props
 }: React.ComponentProps<typeof motion.div>) => {
   const { open, setOpen, animate } = useSidebar();
+
   return (
-    <>
+    <div className="hidden md:flex flex-col relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className="absolute top-2 left-2 z-50 text-white cursor-pointer"
+      >
+        {open ? <X className="text-white" /> : <Menu className="text-white" />}
+
+        {/* {open ? <IconX size={20} /> : <IconMenu2 size={20} />} */}
+      </button>
+
       <motion.div
-        className={cn(
-          "h-full px-2 py-4 hidden md:flex md:flex-col bg-gradient-to-b from-[#15191f] to-[#000000] w-[300px] shrink-0",
-          className
-        )}
+        className={cn("h-full px-2 py-4 shrink-0", className)}
         animate={{
-          width: animate ? (open ? "300px" : "40px") : "300px",
+          width: animate ? (open ? "200px" : "40px") : "200px",
         }}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
         {...props}
       >
         {children}
       </motion.div>
-    </>
+    </div>
   );
 };
 
